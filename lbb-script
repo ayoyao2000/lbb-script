@@ -1,0 +1,93 @@
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local GRT = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local IY = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Frame.Position = UDim2.new(0.15080972, 0, 0.19582665, 0)
+Frame.Size = UDim2.new(0, 577, 0, 190)
+Frame.Active = true
+Frame.Draggable = true
+
+UICorner.Parent = Frame
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Size = UDim2.new(0, 577, 0, 19)
+TextLabel.Font = Enum.Font.GothamBlack
+TextLabel.Text = "Lucky Blocks Battlegrounds"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+UICorner_2.Parent = TextLabel
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+TextLabel_2.Position = UDim2.new(0, 0, 0.0949641317, 0)
+TextLabel_2.Size = UDim2.new(0, 577, 0, 10)
+TextLabel_2.Font = Enum.Font.GothamBlack
+TextLabel_2.Text = "Made by ayoyao#3744"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+UICorner_3.Parent = TextLabel_2
+
+GRT.Name = "GRT"
+GRT.Parent = Frame
+GRT.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+GRT.Position = UDim2.new(0.0866551101, 0, 0.411389649, 0)
+GRT.Size = UDim2.new(0, 211, 0, 55)
+GRT.Font = Enum.Font.GothamBlack
+GRT.Text = "Get Random Tools"
+GRT.TextColor3 = Color3.fromRGB(255, 255, 255)
+GRT.TextScaled = true
+GRT.TextSize = 14.000
+GRT.TextWrapped = true
+GRT.MouseButton1Down:Connect(function()
+	local MyVar = true
+
+	while MyVar == true do
+		game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+		wait(2)
+		MyVar = false
+	end
+end)
+
+UICorner_4.Parent = GRT
+
+IY.Name = "IY"
+IY.Parent = Frame
+IY.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+IY.Position = UDim2.new(0.597920239, 0, 0.379810691, 0)
+IY.Size = UDim2.new(0, 186, 0, 55)
+IY.Font = Enum.Font.GothamBlack
+IY.Text = "Infinite Yield"
+IY.TextColor3 = Color3.fromRGB(255, 255, 255)
+IY.TextScaled = true
+IY.TextSize = 14.000
+IY.TextWrapped = true
+IY.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+UICorner_5.Parent = IY
